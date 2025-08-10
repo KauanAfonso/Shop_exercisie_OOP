@@ -25,4 +25,8 @@ public class Produto{
         return this.quantidade;
     }
 
+    public int setQuantidade(int quantidade){
+        return this.quantidade = quantidade;
+    }
+
 }
