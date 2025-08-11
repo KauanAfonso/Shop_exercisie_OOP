@@ -4,6 +4,7 @@ import java.util.List;
 public class Carrinho {
 
     private float valor_total;
+    private float valor_desconto;
     private static List<Produto> produtos_carrinho = new ArrayList<>();
 
     // CREATE
@@ -28,11 +29,11 @@ public class Carrinho {
     }
     // READ TOTAL
     public float getValor_total() {
-        valor_total = 0; // zera antes de calcular
+        this.valor_total = 0; // zera antes de calcular
         for (Produto produto : produtos_carrinho) {
             valor_total += produto.getPreco() * produto.getQuantidade();
         }
-        return valor_total;
+        return this.valor_total;
     }
 
     // DELETE
@@ -56,4 +57,12 @@ public class Carrinho {
         }
         System.out.println("Produto não encontrado no carrinho.");
     }
+
+    //Desconto
+    public void setDesconto(int numero_percentual){
+        this.getValor_total();
+        this.valor_desconto = this.valor_total - ((this.valor_total * numero_percentual) / 100);
+    }
+
+    public float get_total_desconto(){return this.valor_desconto;}
 }

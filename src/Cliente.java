@@ -13,10 +13,12 @@ public class Cliente {
         this.carrinho = new Carrinho();
     }
 
+    //Mostrar
     public void mostrarDados(){
         System.out.printf("Cliente: %s - Email: %s \n", this.nome, this.email);
     }
 
+    //Obter carrinho
     public Carrinho getCarrinho(){
         return this.carrinho;
     }

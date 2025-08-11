@@ -10,6 +10,7 @@ public class Main {
 
         //cliente
         Cliente adrian = new Cliente("Adrian", 24, "adrian@gmail.com");
+        System.out.println("Cliente: ");
         adrian.mostrarDados();
 
         // Adicionando produtos à loja
@@ -27,16 +28,23 @@ public class Main {
 
         System.out.println("\n--- Listando produtos no carrinho ---");
         adrian.getCarrinho().get_carrinho();
-        System.out.println("Total: R$ " + adrian.getCarrinho().getValor_total());
+        adrian.getCarrinho().setDesconto(10);
+        System.out.println("Total: R$ " + adrian.getCarrinho().getValor_total() + " Com desconto: R$ " + adrian.getCarrinho().get_total_desconto());
 
         System.out.println("\n--- Atualizando quantidade do X tudo ---");
         adrian.getCarrinho().atualizar_quantidade("Lanche X tudo", 3);
         adrian.getCarrinho().get_carrinho();
-        System.out.println("Total: R$ " + adrian.getCarrinho().getValor_total());
+        adrian.getCarrinho().setDesconto(10);
+        System.out.println("Total: R$ " + adrian.getCarrinho().getValor_total() + " Com desconto: R$ " + adrian.getCarrinho().get_total_desconto());
 
         System.out.println("\n--- Removendo o X salada ---");
         adrian.getCarrinho().remover_produto("Lanche X salada");
         adrian.getCarrinho().get_carrinho();
-        System.out.println("Total: R$ " + adrian.getCarrinho().getValor_total());
+
+
+        //Aplicando desconto
+        adrian.getCarrinho().setDesconto(10);
+        System.out.println("Total: R$ " + adrian.getCarrinho().getValor_total() + " Com desconto: R$ " + adrian.getCarrinho().get_total_desconto());
+
     }
 }
