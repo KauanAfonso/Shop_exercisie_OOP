@@ -42,7 +42,7 @@ public class Main {
         adrian.getCarrinho().get_carrinho();
 
 
-        //Aplicando desconto
+        //Aplicando descontoo
         adrian.getCarrinho().setDesconto(10);
         System.out.println("Total: R$ " + adrian.getCarrinho().getValor_total() + " Com desconto: R$ " + adrian.getCarrinho().get_total_desconto());
 
